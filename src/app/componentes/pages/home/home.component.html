@@ -1,0 +1,33 @@
+
+
+
+<h1>Home</h1>
+<hr>
+
+<p>
+    Esta página sólo funciona si estás autenticado
+</p>
+
+<div class="container logo-nav-container">
+    <nav class="navigation">
+        <ul>
+            <li>
+                <!--<a [routerLink]="['/servicios']" [routerLinkActive]="['actived']">Servicios</a>-->
+                <a>Servicios</a>
+            </li>
+            <li>
+                <a [routerLink]="['/agenda']" [routerLinkActive]="['actived']">Agenda Hora</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<h4>User info</h4>
+<pre>{{ usuario | json }}</pre>
+
+<button (click)="logout()">
+    Logout
+</button>
+
+
+<!--<router-outlet></router-outlet>-->

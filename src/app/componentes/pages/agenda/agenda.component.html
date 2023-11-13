@@ -1,0 +1,130 @@
+<div class="container">
+    <h3>Reserva de hora</h3>
+
+    <div class="col-md-8 mx-auto" *ngIf="!isResult">
+        <div class="card mt-4">
+            <div class="card-header text-center">
+                <div class="btn-group btn-group-justified tabs">
+                    <a href="javascript:;" class="btn" (click)="getAccion($event, 'ingresadr')">Reserva por Profesional</a>
+                    <a href="javascript:;" class="btn" (click)="getAccion($event, 'ingresaes')">Reserva por Especialidad</a>
+                </div>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div *ngIf="showProfesional" id="showProfesional" class="formContainer">
+                        <form>
+                            <div class="form-group">
+
+                                <div class="row mb-2 mt-3">
+                                    <label for="name">Ingrese Profesional:</label>
+                                    <input type="text" class="form-control" name='name' placeholder="Dr. Carlos Fantuzi"/>
+                                </div>
+
+                                <div class="mt-3 text-center">
+                                    <button class="btn btn-primary active" type="submit" (click)="btnsig($event, isResult)">
+                                        Siguiente
+                                    </button>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                    <div *ngIf="showEspecialidad" id="showEspecialidad" class="formContainer">
+                        <form>
+                            <div class="form-group">
+
+                                <div class="row mb-2 mt-3">
+                                    <label for="name">Ingrese Especialidad:</label>
+                                    <input type="text" class="form-control" name='name' placeholder="Ortodoncia"/>
+                                </div>
+
+                                <div class="mt-3 text-center">
+                                    <button class="btn btn-primary active" type="submit" (click)="btnsig($event, isResult)">
+                                        Siguiente
+                                    </button>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-8 mx-auto" *ngIf="isResult">
+        <!--Lista con profesionales y hora disponible-->
+        <div class="card mt-4">
+            <div class="card-header text-center">
+                <div class="btn-group btn-group-justified tabs">
+    
+                </div>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="formContainer">
+                        <form>
+                            <div class="form-group">
+
+                                <div class="row mb-2 mt-3">
+                                    <label for="name">Estos son los horarios disponibles:</label>
+                                    <!-- Agregar una tabla donde se muestre los horarios -->
+                                </div>
+
+                                <div class="mt-3 text-center">
+                                    <button class="btn btn-primary active" type="submit" (click)="btnsig($event, isResult)">
+                                        Siguiente
+                                    </button>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8 mx-auto" *ngIf="isResult">
+        <!--Lista con profesionales y hora disponible-->
+        <div class="card mt-4">
+            <div class="card-header text-center">
+                <div class="btn-group btn-group-justified tabs">
+    
+                </div>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="formContainer">
+                        <form>
+                            <div class="form-group">
+
+                                <div class="row mb-2 mt-3">
+                                    <label for="name">Estos son los horarios disponibles:</label>
+                                    <!-- Agregar una tabla donde se muestre los horarios -->
+                                </div>
+
+                                <div class="mt-3 text-center">
+                                    <button class="btn btn-primary active" type="submit">
+                                        Siguiente
+                                    </button>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+

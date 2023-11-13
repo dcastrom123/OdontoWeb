@@ -1,0 +1,97 @@
+/* Estilos Generales */
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #333;
+    background-color: #aaa9a9;
+    font-size: 1.2rem;
+    line-height: 1.6em;
+    margin: 0;
+   
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h1{
+    font-size: 2rm;
+    line-height: 1.3em;
+}
+
+p{
+    margin-top: 1.6em;
+}
+
+.container{
+    width: 90%;
+    max-width: 1600px;
+    margin: auto;
+}
+
+/* Barra de navegacion o header */
+
+.header{
+    background: #333;
+    color: aliceblue;
+    padding: 2rem 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+}
+
+.header a{
+    color: white;
+    text-decoration: none;
+}
+
+/* logo */
+.logo-nav-container{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.logo{
+    letter-spacing: 15px;
+    font-size: 1.5em;
+}
+
+.navigation ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navigation ul li{
+    display: inline-block;
+}
+
+.navigation ul li a {
+    display: block;
+    padding: 0.5rem 1rem;
+    transition: all 0.4s linear;
+    border-radius: 5px;
+}
+
+.navigation ul li a:hover,
+.actived {
+    background: #4a4a4a;
+}
+
+/* contenido section */
+.content {
+    min-height: 882px;
+    width: 97%;
+    margin: 0px auto;
+    box-shadow: 0px 0px 1px rgb(26, 25, 25);
+    padding-top: 10rem; 
+}
+
+/* pie de pagina */
+.footer{
+    width: 75%;
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: 0px auto;
+    
+}
