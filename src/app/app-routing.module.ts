@@ -4,6 +4,8 @@ import { RouterModule, Routes} from '@angular/router';
 import { ErrorPageComponent } from './shared/error-page/error-page.component';
 import { ValidarTokenGuard } from './guards/validar-token.guard';
 import { AgendaComponent } from './componentes/pages/agenda/agenda.component';
+import { ServiciosComponent } from './componentes/pages/servicios/servicios.component';
+import { HomeComponent } from './componentes/pages/home/home.component';
 
 const routes: Routes = [
   {
@@ -17,18 +19,26 @@ const routes: Routes = [
       canLoad: [ ValidarTokenGuard ]
   },
   {
-    path: '404',
-    component: ErrorPageComponent
+    path: 'home',
+    component: HomeComponent
   },
   {
     path: 'agenda',
     component: AgendaComponent
   },
   {
+    path: 'servicios',
+    component: ServiciosComponent
+  },
+  {
+    path: 'Inicio',
+    component: ErrorPageComponent
+  },
+  {
     path: "**",
     //component: ErrorPageComponent
-    redirectTo: '404'
-  }
+    redirectTo: 'Inicio'
+  },
 ]
 
 @NgModule({

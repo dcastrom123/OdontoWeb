@@ -9,20 +9,32 @@ import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
     children: [
-      { path: 'agenda', component: AgendaComponent },
-      { path: 'home', component: HomeComponent },
-      { path: 'servicios', component: ServiciosComponent },
-      { path: 'usuarios', component: UsuariosComponent },
-      { path: '**', redirectTo: 'home' }
-
+      { 
+        path: 'agenda',
+        component: AgendaComponent
+      },
+      { 
+        path: 'home', 
+        component: HomeComponent
+      },
+      { 
+        path: 'servicios', 
+        component: ServiciosComponent 
+      },
+      { 
+        path: 'usuarios', 
+        component: UsuariosComponent 
+      },
+      { 
+        path: '**', 
+        redirectTo: 'home' 
+      }
     ]
   }
 ] 
 
 @NgModule({
-  declarations: [],
   imports: [
     RouterModule.forChild( routes )
   ],

@@ -1,19 +1,20 @@
 
 
 
-<h1>Home</h1>
+<h1>Bienvenido a Clinica </h1>
 <hr>
 
+<pre>{{ usuario | json }}</pre>
+
 <p>
-    Esta página sólo funciona si estás autenticado
+    Revisa nuestros servicios y agenda tu hora.
 </p>
 
 <div class="container logo-nav-container">
     <nav class="navigation">
         <ul>
             <li>
-                <!--<a [routerLink]="['/servicios']" [routerLinkActive]="['actived']">Servicios</a>-->
-                <a>Servicios</a>
+                <a [routerLink]="['/servicios']" [routerLinkActive]="['actived']">Servicios</a>
             </li>
             <li>
                 <a [routerLink]="['/agenda']" [routerLinkActive]="['actived']">Agenda Hora</a>
@@ -22,12 +23,76 @@
     </nav>
 </div>
 
-<h4>User info</h4>
-<pre>{{ usuario | json }}</pre>
-
-<button (click)="logout()">
+<button btn="btn-primary" (click)="logout()">
     Logout
 </button>
 
 
 <!--<router-outlet></router-outlet>-->
+
+<section class="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card text-center">
+                    <img src="/assets/img/dental.png" style="height: 60px; width: 60px; margin-left: auto;
+                margin-right: auto; margin-top: 15px;" alt="" class="card-img-top">
+                    <h3>Satisfaccion Garantizada</h3>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card text-center">
+                    <img src="/assets/img/dental.png" style="height: 60px; width: 60px; margin-left: auto;
+                margin-right: auto; margin-top: 15px;" alt="" class="card-img-top">
+                    <h3>Tecnologia de punta</h3>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card text-center">
+                    <img src="/assets/img/dental.png" style="height: 60px; width: 60px; margin-left: auto;
+                margin-right: auto; margin-top: 15px;" alt="" class="card-img-top">
+                    <h3>Expertos Dentales</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <div class="row text-center">
+            <div class="col">
+                <h3>Nuestro Equipo</h3>
+                <h2>Una Clinica en la que puedes confiar.</h2>
+                <p>
+                    En <strong>NombreClinica</strong>, nuestro equipo está comprometido a proporcionar servicios dentales excepcionales con un enfoque en la comodidad y el bienestar de nuestros pacientes.
+                    Contamos con una amplia gama de tratamientos dentales y especialidades odontológicas para ofrecer un diagnóstico y tratamiento de calidad a ti y toda tu familia.
+                    Nuestro compromiso es garantizar tu satisfacción y confianza en cada visita.
+                  </p>
+            </div>
+            <div class="col">
+                <h3>aqui poner datos</h3>
+
+            </div>
+   
+        </div>
+    </div>
+
+</section>
+
+<section class="content">
+    <div class="container mt-5">
+        <div class="row text-center">
+            <div class="col">
+                <h3>Nuestro Equipo</h3>
+                <h2>Una Clinica en la que puedes confiar.</h2>
+                <p>
+                    En <strong>NombreClinica</strong>, contamos con un equipo de profesionales altamente capacitados y apasionados por la odontología.
+                    Nuestra misión es brindar atención dental de alta calidad, utilizando tecnología de punta y enfoques innovadores para asegurar tu salud bucal.
+                    Confía en nosotros para tus necesidades dentales, estamos aquí para cuidar de ti y tu sonrisa.
+                  </p>
+            </div>
+            <div class="col">
+                <h3>aqui poner datos</h3>
+
+            </div>
+        </div>
+    </div>
+</section>
