@@ -5,11 +5,17 @@ import { AgendaComponent } from './pages/agenda/agenda.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ServiciosComponent } from './pages/servicios/servicios.component';
 import { UsuariosComponent } from './pages/usuarios/usuarios.component';
+import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
 
 const routes: Routes = [
   {
     path: '',
+    component: LayoutPageComponent,
     children: [
+      { 
+        path: 'agenda',
+        component: AgendaComponent
+      },
       { 
         path: 'agenda',
         component: AgendaComponent
@@ -28,7 +34,7 @@ const routes: Routes = [
       },
       { 
         path: '**', 
-        redirectTo: 'home' 
+        redirectTo: 'layout' 
       }
     ]
   }

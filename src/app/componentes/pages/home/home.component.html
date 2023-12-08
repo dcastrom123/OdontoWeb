@@ -1,35 +1,23 @@
 
 
 
-<h1>Bienvenido a Clinica </h1>
+<h1>Hola <span>{{usuario?.name}}</span> bienvenido a Clinica Dental Los Presidentes </h1>
 <hr>
 
-<pre>{{ usuario | json }}</pre>
+<!--
+    <pre>{{ usuario | json }}</pre>
+-->
 
 <p>
     Revisa nuestros servicios y agenda tu hora.
 </p>
 
-<div class="container logo-nav-container">
-    <nav class="navigation">
-        <ul>
-            <li>
-                <a [routerLink]="['/servicios']" [routerLinkActive]="['actived']">Servicios</a>
-            </li>
-            <li>
-                <a [routerLink]="['/agenda']" [routerLinkActive]="['actived']">Agenda Hora</a>
-            </li>
-        </ul>
-    </nav>
-</div>
-
-<button btn="btn-primary" (click)="logout()">
-    Logout
-</button>
-
-
-<!--<router-outlet></router-outlet>-->
-
+<mat-sidenav-container>    
+    <div class="container p-2">
+        <router-outlet></router-outlet>
+    </div>
+    </mat-sidenav-container>
+ 
 <section class="content">
     <div class="container">
         <div class="row">

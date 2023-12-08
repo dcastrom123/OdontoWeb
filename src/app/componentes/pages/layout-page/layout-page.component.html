@@ -1,0 +1,33 @@
+<header class="header">
+    <div class="container logo-nav-container">
+        <a href="" class="logo">Nombre Clinica</a>
+        <nav class="navigation">
+            <ul>
+                <li>
+                    <a [routerLink]="['/componentes/home']" [routerLinkActive]="['actived']">Home</a>
+                </li>
+                <li>
+                    <a [routerLink]="['/componentes/servicios']" [routerLinkActive]="['actived']">Servicios</a>
+                </li>
+                <li>
+                    <a [routerLink]="['/componentes/agenda']" [routerLinkActive]="['actived']">Agenda Hora</a>
+                </li>
+                <li>
+                    <!--<a [routerLink]="['/registro']" [routerLinkActive]="['actived']">Registro</a>-->
+                </li>
+                <li>
+                    <!--<a [routerLink]="['/login']" [routerLinkActive]="['actived']">Login</a>-->
+                </li>
+            </ul>
+        </nav>
+        <button btn="btn-primary" (click)="onLogout()">
+            Logout
+        </button>
+    </div>
+</header>
+
+<section class="content">
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+</section>

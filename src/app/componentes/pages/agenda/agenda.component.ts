@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient  } from '@angular/common/http';
 
 @Component({
   selector: 'app-agenda',
@@ -11,18 +12,51 @@ export class AgendaComponent implements OnInit {
   showEspecialidad: boolean = false;
   isResult: boolean = false;
 
-// Ejemplo de lista de profesionales
-profesionales: any[] = [
-  { id: 1, nombre: 'Dr. Carlos Fantuzi' },
-  { id: 2, nombre: 'Dra. Ana Rodríguez' },
-  // Agrega más profesionales según tus necesidades
-];
- // Variable para almacenar el profesional seleccionado
- selectedProfesional: any;
+// Ejemplo de lista de profesionales y especialidades
+profesionales: any[] = [];
+especialidades: any[] = [];
 
-  constructor() { }
+// Variables para almacenar el profesional y especialidad seleccionado
+selectedProfesional: any;
+selectedEspecialidad: any;
 
-  ngOnInit(): void {}
+
+
+  constructor(private http: HttpClient) { }
+
+  ngOnInit(): void {
+       // Llamada a la API para obtener la lista de profesionales al iniciar el componente
+       this.obtenerProfesionales();
+       this.obtenerEspecialidades();
+  }
+//Profesionales
+  obtenerProfesionales() {
+    this.http.get<any[]>('http://localhost:3700/api/auth/profesionales').subscribe(
+      (data) => {
+        this.profesionales = data;
+      },
+      (error) => {
+        console.error('Error al obtener la lista de profesionales:', error);
+      }
+    );
+  }
+  seleccionarProfesional(profesional: any) {
+    this.selectedProfesional = profesional;
+  }
+
+  //Especialidades
+  obtenerEspecialidades(){
+    this.http.get<any[]>('http://localhost:3700/api/auth/especialidades').subscribe(
+      (data) => {
+        this.especialidades = data;
+      },
+      (error) => {
+        console.error('Error al obtener la lista de especialidades:', error);
+      }
+    );
+  }
+
+
 
   btnsig(event: Event, accion: any) {
     this.isResult = true;

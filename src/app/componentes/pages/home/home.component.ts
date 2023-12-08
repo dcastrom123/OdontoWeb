@@ -11,7 +11,7 @@ import { Usuario } from '../../../auth/interfaces/auth.interface';
 })
 export class HomeComponent{
 
-  get usuario() {
+  get usuario(): Usuario | undefined {
     return this.authService.usuario;
   }
 
@@ -19,8 +19,8 @@ export class HomeComponent{
                private authService: AuthService) { }
 
  
-  logout(){
-    this.router.navigateByUrl('/auth');
+  onLogout(){
     this.authService.logout();
+    this.router.navigateByUrl('/auth/login');
   }
 }

@@ -19,26 +19,15 @@ const routes: Routes = [
       canLoad: [ ValidarTokenGuard ]
   },
   {
-    path: 'home',
-    component: HomeComponent
-  },
-  {
-    path: 'agenda',
-    component: AgendaComponent
-  },
-  {
-    path: 'servicios',
-    component: ServiciosComponent
-  },
-  {
-    path: 'Inicio',
+    path: '',
     component: ErrorPageComponent
-  },
+  },/*
   {
     path: "**",
     //component: ErrorPageComponent
-    redirectTo: 'Inicio'
-  },
+    redirectTo: 'Inicio',
+    pathMatch: 'full'
+  },*/
 ]
 
 @NgModule({

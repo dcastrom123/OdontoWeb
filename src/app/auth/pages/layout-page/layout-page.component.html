@@ -1,0 +1,41 @@
+<header class="header">
+    <div class="container logo-nav-container">
+        <a href="" class="logo">Nombre Clinica</a>
+        <nav class="navigation">
+            <ul>
+                <li>
+                    <a [routerLink]="['/']" [routerLinkActive]="['actived']">Volver</a>
+                </li>
+                <li>
+                    <!--<a [routerLink]="['/servicios']" [routerLinkActive]="['actived']">Servicios</a>
+                </li>
+                <li>
+                    <a [routerLink]="['/agenda-hora']" [routerLinkActive]="['actived']">Agenda Hora</a>
+                </li>
+                <li>-->
+                    <!--<a [routerLink]="['/registro']" [routerLinkActive]="['actived']">Registro</a>-->
+                </li>
+                <li>
+                    <!--<a [routerLink]="['/login']" [routerLinkActive]="['actived']">Login</a>-->
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<mat-sidenav-container>
+<!--
+
+    <mat-toolbar>
+        <span>{{usuario?.name}}</span>
+        
+        <button mat-button (click)="onLogout">
+            Logout
+        </button>
+    </mat-toolbar>
+-->
+
+<div class="container p-2">
+    <router-outlet></router-outlet>
+</div>
+
+</mat-sidenav-container>
