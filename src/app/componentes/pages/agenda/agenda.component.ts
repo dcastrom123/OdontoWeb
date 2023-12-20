@@ -43,38 +43,41 @@ selectedProfesionalId: string | undefined;
     );
   }
 
-  //Seleccionar profesional y guardarlo para usar en el siguiente paso
-  seleccionarProfesional(profesional: any) {
-    this.selectedProfesional = profesional;
-    // Llamada a la API para obtener la lista de especialidades del profesional seleccionado
-    this.obtenerEspprofesional();
-  }
-//seleccionar desde dropdowns
-  seleccionarProfesionalDesdeDropdown(event: any) {
-    let selectedProfesionalId = event.target.value;
-    this.selectedProfesional = this.profesionales.find(profesional => profesional.id === this.selectedProfesionalId);
-    
-    console.log(selectedProfesionalId);
-    this.cdr.detectChanges();
+  //seleccionar desde dropdowns
+    seleccionarProfesionalDesdeDropdown(event: any) {
+      this.selectedProfesionalId = event.target.value;
 
-  }
+      if (this.selectedProfesionalId) {
+          this.seleccionarProfesional(); 
+          console.log(this.selectedProfesionalId);
+          this.cdr.detectChanges();
+      } else {
+          console.error('ID de profesional seleccionado es undefined.');
+      }
+    }
+//---------------------------------------------------------------------------
+  //Seleccionar profesional y guardarlo para usar en el siguiente paso
+  //seleccionarProfesional(profesional: any) {
+    //this.selectedProfesional = profesional;
+    //this.obtenerEspprofesional();
+  //}
+//---------------------------------------------------------------------------
+
+// Obtener información del profesional seleccionado
+seleccionarProfesional() {
+  this.http.get(`http://localhost:3700/api/auth/profesionales/${this.selectedProfesionalId}`)
+      .subscribe((data: any) => {
+          this.selectedProfesional = data;
+        console.log(this.selectedProfesional);
+          // Luego, obtén las especialidades del profesional seleccionado
+          this.obtenerEspprofesional();
+      });
+      console.log(this.selectedProfesional);
+    }
 
 
   //Obtener especialidades por profesional seleccionado
   obtenerEspprofesional(){
-    /*const _id = this.selectedProfesional._id;
-    if (_id) {
-      this.http.get<any[]>(`http://localhost:3700/api/auth/profesionales/${_id}/especialidades`).subscribe(
-        (data) => {
-          this.especialidades = data;
-        },
-        (error) => {
-          console.error('Error al obtener la lista de especialidades:', error);
-        }
-      );
-    }
-    console.log("seleccionado dr muestra especialidad");
-  */
     if (this.selectedProfesionalId) {
       this.http.get<any[]>(`http://localhost:3700/api/auth/profesionales/${this.selectedProfesionalId}/especialidades`).subscribe(
         (data) => {
@@ -102,10 +105,23 @@ selectedProfesionalId: string | undefined;
 
 
 
-
   btnsig(event: Event, accion: any) {
     this.isResult = true;
   }
+/*
+  btnsig(event: Event, isResult: boolean) {
+        // Asegúrate de que selectedProfesional tenga información válida
+        if (this.selectedProfesional) {
+          const id = this.selectedProfesional._id; // O ajusta según la propiedad correcta
+          const nombre = this.selectedProfesional.nombre;
+          const especialidades = this.especialidades; // Asegúrate de que especialidades tenga información válida
+  
+          // Ahora puedes usar el ID, nombre y especialidades en la siguiente sección
+          // ... (código para navegar a la siguiente sección o realizar acciones necesarias)
+      } else {
+          console.error('No se ha seleccionado un profesional.');
+      }
+  }*/
   goBack(){
     //volver pagina anterior
     window.history.back();
